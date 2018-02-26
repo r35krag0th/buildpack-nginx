@@ -90,7 +90,8 @@ if [[ ! -f "${CACHE_DIR}/bin/nginx" ]]; then
     --with-file-aio \
     --with-zlib=../zlib-${ZLIB_VERSION} \
     --with-pcre \
-    --with-cc-opt="-O2 -static -static-libgcc"
+    --with-cc-opt="-O2 -static -static-libgcc" \
+    --with-http_ssl_module
 
   sed -i "/CFLAGS/s/ \-O //g" objs/Makefile
 
